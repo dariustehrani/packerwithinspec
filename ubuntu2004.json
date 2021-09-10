@@ -1,7 +1,7 @@
 {
     "min_packer_version": "1.5.4",
     "variables": {
-      "use_azure_cli_auth": true,
+      "use_azure_cli_auth": "true",
       "build_id": "{{env `GITHUB_JOB`}}",
       "azure_location": "westeurope",      
       "resource_group_name": "tf-infra-4711",
