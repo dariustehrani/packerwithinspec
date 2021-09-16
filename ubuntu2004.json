@@ -1,5 +1,5 @@
 {
-    "min_packer_version": "1.5.0",
+    "min_packer_version": "1.7.0",
     "variables": {
       "build_id": "{{env `GITHUB_JOB`}}",
       "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
@@ -15,6 +15,7 @@
       {
         "type": "azure-arm",
         "use_azure_cli_auth": "true",
+        "subscription_id": "{{user `subscription_id`}}",
         "managed_image_name": "{{user `my_image_name`}}-{{user `build_id`}}",
         "managed_image_resource_group_name": "{{user `resource_group_name`}}",
         "os_type": "Linux",

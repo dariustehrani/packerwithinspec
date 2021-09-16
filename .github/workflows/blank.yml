@@ -31,26 +31,9 @@ jobs:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
          creds: ${{ secrets.AZURE_CREDENTIALS }}
          enable-AzPSSession: false
-    
+         
       - name: Use latest Packer
         uses: hashicorp-contrib/setup-packer@v1
-        with:
-          packer-version: 1.7.5
-     
-      - name: Azure CLI Action
-        uses: Azure/cli@1.0.4
-        with:
-         inlineScript: "packer validate ubuntu2004.json"
-     
-          
-      - name: Azure CLI Logout
-        uses: azure/CLI@v1
-        with:
-          azcliversion: 2.0.72
-          inlineScript: |
-            az logout
-            az cache purge
-            az account clear    
-          
-        
-          
+
+      - name: Build image from template
+        run: packer validate ubuntu2004.json
