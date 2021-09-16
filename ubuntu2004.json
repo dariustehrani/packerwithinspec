@@ -1,5 +1,5 @@
 {
-    "min_packer_version": "1.5.4",
+    "min_packer_version": "1.7.0",
     "variables": {
       "use_azure_cli_auth": "true",
       "build_id": "{{env `GITHUB_JOB`}}",
@@ -13,10 +13,7 @@
     "builders": [
       {
         "type": "azure-arm",
-        "subscription_id": "{{user `subscription_id`}}",
-        "tenant_id": "{{user `tenant_id`}}",
-        "client_id": "{{user `client_id`}}",
-        "client_secret": "{{user `client_secret`}}",
+        "use_azure_cli_auth": "true",
         "managed_image_name": "{{user `my_image_name`}}-{{user `build_id`}}",
         "managed_image_resource_group_name": "{{user `resource_group_name`}}",
         "os_type": "Linux",
