@@ -4,7 +4,7 @@
       "build_id": "{{env `GITHUB_JOB`}}",
       "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
       "azure_location": "westeurope",      
-      "use_azure_cli_auth": "true",
+      "use_azure_cli_auth": true,
       "resource_group_name": "tf-infra-4711",
       "storage_account": "packerinfra4711",
       "my_image_name": "4711-ubuntu-web",
