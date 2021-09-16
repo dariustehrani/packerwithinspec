@@ -4,7 +4,6 @@
       "build_id": "{{env `GITHUB_JOB`}}",
       "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
       "azure_location": "westeurope",      
-      "use_azure_cli_auth": "true",
       "resource_group_name": "tf-infra-4711",
       "storage_account": "packerinfra4711",
       "my_image_name": "4711-ubuntu-web",
@@ -14,7 +13,6 @@
     "builders": [
       {
         "type": "azure-arm",
-        "use_azure_cli_auth": "true",
         "subscription_id": "{{user `subscription_id`}}",
         "location": "{{user `azure_location`}}",
         "managed_image_name": "{{user `my_image_name`}}-{{user `build_id`}}",
