@@ -13,6 +13,7 @@
     "builders": [
       {
         "type": "azure-arm",
+        "use_azure_cli_auth": "true",
         "subscription_id": "{{user `subscription_id`}}",
         "location": "{{user `azure_location`}}",
         "managed_image_name": "{{user `my_image_name`}}-{{user `build_id`}}",
