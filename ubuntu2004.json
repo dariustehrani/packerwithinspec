@@ -1,9 +1,10 @@
 {
     "min_packer_version": "1.5.0",
     "variables": {
-      "use_azure_cli_auth": "true",
       "build_id": "{{env `GITHUB_JOB`}}",
+      "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
       "azure_location": "westeurope",      
+      "use_azure_cli_auth": "true",
       "resource_group_name": "tf-infra-4711",
       "storage_account": "packerinfra4711",
       "my_image_name": "4711-ubuntu-web",
@@ -24,6 +25,7 @@
         "vm_size": "Standard_DS2_v2",
 
         "shared_image_gallery_destination": {
+          "subscription": "{{user `subscription_id`}}",
           "resource_group": "{{user `resource_group_name`}}",
           "gallery_name": "{{user `my_sig_name`}}",
           "image_name": "{{user `my_image_name`}}",
