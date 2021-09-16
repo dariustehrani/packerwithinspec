@@ -16,13 +16,18 @@
         "type": "azure-arm",
         "use_azure_cli_auth": "true",
         "subscription_id": "{{user `subscription_id`}}",
+        "location": "{{user `azure_location`}}",
         "managed_image_name": "{{user `my_image_name`}}-{{user `build_id`}}",
         "managed_image_resource_group_name": "{{user `resource_group_name`}}",
         "os_type": "Linux",
-        "image_publisher": "Canonical",
-        "image_offer": "UbuntuServer",
-        "image_sku": "20_04-lts",
-        "location": "{{user `azure_location`}}",
+        "imageReference": {
+          "publisher": "canonical",
+          "offer": "0001-com-ubuntu-server-focal",
+          "sku": "20_04-lts-gen2",
+          "version": "latest"
+      },
+     
+        
         "vm_size": "Standard_DS2_v2",
 
         "shared_image_gallery_destination": {
