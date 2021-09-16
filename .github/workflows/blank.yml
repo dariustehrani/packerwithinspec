@@ -24,7 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-    
+  
+      - name: Use latest Packer
+        uses: hashicorp-contrib/setup-packer@v1
+        with:
+          packer-version: 1.7.5
+  
       - name: Azure Login
         uses: Azure/login@v1.1
         with:
