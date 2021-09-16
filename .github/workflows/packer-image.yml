@@ -39,3 +39,8 @@ jobs:
         run: packer validate ubuntu2004.json
         env: # Or as an environment variable
          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
+
+      - name: Build image from template
+        run: packer build ubuntu2004.json
+        env: # Or as an environment variable
+         subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
