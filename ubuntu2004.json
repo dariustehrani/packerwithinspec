@@ -25,7 +25,7 @@
         "vm_size": "Standard_DS2_v2",
 
         "shared_image_gallery_destination": {
-          "subscription_id": "{{user `subscription_id`}}",
+          "subscription": "{{user `subscription_id`}}",
           "resource_group": "{{user `resource_group_name`}}",
           "gallery_name": "{{user `my_sig_name`}}",
           "image_name": "{{user `my_image_name`}}",
